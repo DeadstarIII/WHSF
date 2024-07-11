@@ -3,3 +3,33 @@
 @tailwind utilities;
 
 /* Add your custom styles here if needed */
+
+/* globals.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #000;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  button {
+    transition: background-color 0.2s ease;
+  }
+  
+  header, footer {
+    transition: background-color 0.2s ease;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
