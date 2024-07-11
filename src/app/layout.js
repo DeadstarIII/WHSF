@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 
 export const metadata = {
   title: 'Wesean Student Federation',
-  description: 'Website for the World Student Federation',
+  description: 'Website for the Wesean Student Federation',
 };
 
 export default function RootLayout({ children }) {
