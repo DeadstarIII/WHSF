@@ -1,9 +1,11 @@
+// components/Header.js
+
 import Link from 'next/link';
 import Image from 'next/image'; // Import next/image for optimized image loading
 
 const Header = () => {
   return (
-    <header className="text-gray-400 bg-gray-900 body-font">
+    <header className="text-gray-400 bg-gray-900 body-font" style={{maxHeight : '12vh'}}>
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link className="flex title-font font-medium items-center text-white mb-4 md:mb-0" href="/">
        
@@ -34,7 +36,7 @@ const Header = () => {
           </svg>
         </button></a>
       </div>
-      <div className="w-full border-b-2 border-gray-800"></div>
+      <div className="w-full border-b-2 border-gray-800" style={{maxHeight:'1vh'}}></div>
 
     </header>
   );
