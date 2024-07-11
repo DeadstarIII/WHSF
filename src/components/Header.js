@@ -34,6 +34,8 @@ const Header = () => {
           </svg>
         </button></a>
       </div>
+      <div className="w-full border-b-2 border-gray-800"></div>
+
     </header>
   );
 };
