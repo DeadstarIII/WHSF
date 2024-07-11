@@ -3,8 +3,8 @@ import './globals.css';
 import Header from '@/components/Header';
 
 export const metadata = {
-  title: 'WSF Website',
-  description: 'Website for the World Student Forum',
+  title: 'Wesean Student Federation',
+  description: 'Website for the World Student Federation',
 };
 
 export default function RootLayout({ children }) {
