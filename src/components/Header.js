@@ -2,10 +2,10 @@
 
 import React from "react";
 import Link from "next/link";
-
+// backgroundColor:"#282726 !important" 
 const Header = ({ onLinkClick }) => {
   return (
-    <header className="text-white bg-black body-font transition-all duration-300" style={{ maxHeight: "12vh" }}>
+    <header className="text-white body-font bg-gray-900 transition-all duration-300" style={{ maxHeight: "12vh"}}>
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" passHref>
           <div className="flex title-font font-medium items-center text-white mb-4 md:mb-0 transition-transform duration-500 hover:scale-105">
@@ -34,6 +34,9 @@ const Header = ({ onLinkClick }) => {
           </Link>
           <Link className="mr-5 transition-colors duration-300 hover:text-purple-500" href="/Preamble" passHref>
             Preamble
+          </Link>
+          <Link className="mr-5 transition-colors duration-300 hover:text-purple-500" href="/Contact" passHref>
+            Contact Us
           </Link>
         </nav>
         <a

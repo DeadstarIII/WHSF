@@ -45,3 +45,19 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #6200ea;
+  --secondary-color: #03dac6;
+}
+
+[data-theme='dark'] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+}
+
