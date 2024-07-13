@@ -45,9 +45,8 @@ const Contact = () => {
       setShowSuccess(true);
       setTimeout(() => {
         setShowSuccess(false);
-      }, 3000); // Hide the message after 3 seconds
+      }, 3000); 
 
-      // Clear form fields
       setFormData({
         name: "",
         email: "",
