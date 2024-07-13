@@ -37,7 +37,7 @@ export default function Home() {
           <p className="mb-8 leading-relaxed text-gray-400">
             Wesea, short for Western South East Asia, is a region known for its
             rich cultural diversity, boasting over 220 ethnic groups and a
-            multitude of Tibeto-Burman languages. Explore its vibrant traditions
+            multitude of. Explore its vibrant traditions
             and landscapes.
           </p>
         </div>
