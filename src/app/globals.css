@@ -23,9 +23,10 @@ a {
 html {
   overflow: scroll;
   overflow-x: hidden;
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; }
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 ::-webkit-scrollbar {
   width: 0;
@@ -46,8 +47,7 @@ img {
   height: auto;
 }
 
-
-:root {
+/* :root {
   --background-color: #ffffff;
   --text-color: #000000;
   --primary-color: #6200ea;
@@ -60,4 +60,4 @@ img {
   --primary-color: #bb86fc;
   --secondary-color: #03dac6;
 }
-
+ */

@@ -4,13 +4,15 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [contentHeight, setContentHeight] = useState(0);
+  const [contentHeight, setContentHeight] = useState("100vh");
+
   useEffect(() => {
     const handleResize = () => {
       const headerHeight = document.querySelector("header").offsetHeight;
       const footerHeight = document.querySelector("footer").offsetHeight;
       setContentHeight(`calc(100vh - ${headerHeight}px - ${footerHeight}px)`);
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
@@ -37,8 +39,7 @@ export default function Home() {
           <p className="mb-8 leading-relaxed text-gray-400">
             Wesea, short for Western South East Asia, is a region known for its
             rich cultural diversity, boasting over 220 ethnic groups and a
-            multitude of. Explore its vibrant traditions
-            and landscapes.
+            multitude of. Explore its vibrant traditions and landscapes.
           </p>
         </div>
       </div>
