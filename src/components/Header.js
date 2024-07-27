@@ -54,8 +54,8 @@ const Header = ({ onLinkClick }) => {
           <Link className="mr-5 hover:text-purple-500" href="/About" passHref>
             About us
           </Link>
-          <Link className="mr-5 hover:text-purple-500" href="/Partners" passHref>
-            Partners
+          <Link className="mr-5 hover:text-purple-500" href="/Initiatives" passHref>
+            Initiatives
           </Link>
           <Link className="mr-5 hover:text-purple-500" href="/Contact" passHref>
             Contact us
@@ -99,8 +99,8 @@ const Header = ({ onLinkClick }) => {
               <Link className="mb-4 hover:text-purple-500" href="/About" passHref>
                 About us
               </Link>
-              <Link className="mb-4 hover:text-purple-500" href="/Partners" passHref>
-                Partners
+              <Link className="mb-4 hover:text-purple-500" href="/Initiatives" passHref>
+                Initiatives
               </Link>
               <Link className="mb-4 hover:text-purple-500" href="/Contact" passHref>
                 Contact us

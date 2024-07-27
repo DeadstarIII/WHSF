@@ -1,4 +1,4 @@
-// src/pages/Events.js
+// src/pages/Initiatives.js
 "use client";
 
 import Header from "@/components/Header";
@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import styles from "../app/globals.css"
 import { useState, useEffect } from "react";
 
-export default function Events() {
+export default function Initiatives() {
   const [contentHeight, setContentHeight] = useState(0);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Events() {
   return (
     <>
       <Header />
-      <title>WHSF - Events</title>
+      <title>WHSF - Initiatives</title>
       <section className="text-gray-400 bg-gray-900 body-font" style={{ minHeight: contentHeight }}>
         <div className="container px-5 py-24 mx-auto">
           <h1 className="text-3xl font-medium title-font text-white mb-12 text-center">Research Programs for High Schoolers</h1>
