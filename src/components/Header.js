@@ -63,7 +63,7 @@ const Header = ({ onLinkClick }) => {
         </nav>
         <div className="hidden md:flex md:ml-5 items-center">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSe-JQg5-iN8MGvnfQrDXnbAoQiMNjdMewISWMISREc3PAKZiQ/viewform?pli=1"
+            href="https://eu.frms.link/g1phmty/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white text-black border-0 py-2 px-4 focus:outline-none hover:bg-gray-200 rounded text-base"
@@ -106,7 +106,7 @@ const Header = ({ onLinkClick }) => {
                 Contact us
               </Link>
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSe-JQg5-iN8MGvnfQrDXnbAoQiMNjdMewISWMISREc3PAKZiQ/viewform?pli=1"
+                href="https://eu.frms.link/g1phmty/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-gray-900 text-white border-0 py-2 px-4 focus:outline-none hover:bg-gray-700 rounded text-base"
