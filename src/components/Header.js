@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { createPortal } from "react-dom";
 
 const Header = ({ onLinkClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,111 +11,65 @@ const Header = ({ onLinkClick }) => {
   };
 
   return (
-    <header className="text-white body-font bg-gray-900 relative">
-      <div className="container mx-auto flex flex-wrap p-5 items-center">
-        <div className="flex items-center justify-between w-full md:w-auto">
-          <Link href="/" passHref>
-            <div className="flex items-center text-white cursor-pointer">
-              <img
-                src="/logo.png"
-                alt="Logo"
-                className="rounded-full bg-purple-500"
-                width={40}
-                height={40}
-              />
-              <span className="ml-3 text-xl font-medium">WHSF</span>
-            </div>
-          </Link>
-          <button
-            className="md:hidden ml-auto text-white focus:outline-none"
-            onClick={toggleMenu}
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-6 h-6 transition-transform duration-300"
-              viewBox="0 0 24 24"
-              style={{
-                transform: isMenuOpen ? "rotate(90deg)" : "rotate(0)",
-              }}
-            >
-              <path d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-        <nav className="hidden md:flex md:ml-auto items-center text-base justify-center flex-grow">
-          <Link className="mr-5 hover:text-purple-500" href="/" passHref>
-            Home
-          </Link>
-          <Link className="mr-5 hover:text-purple-500" href="/About" passHref>
-            About us
-          </Link>
-          <Link className="mr-5 hover:text-purple-500" href="/Initiatives" passHref>
-            Initiatives
-          </Link>
-          <Link className="mr-5 hover:text-purple-500" href="/Contact" passHref>
-            Contact us
-          </Link>
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-12">
+        <Link href="/" passHref>
+          <div className="flex items-center space-x-3 cursor-pointer group">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="w-8 h-8 rounded-full group-hover:brightness-110 transition duration-300"
+            />
+          </div>
+        </Link>
+
+        {/* Navigation */}
+        <nav className="hidden md:flex space-x-8">
+          {["Home", "About", "Initiatives", "Contact"].map((item) => (
+            <Link key={item} href={item === "Home" ? "/" : `/${item}`} passHref>
+              <span className="text-sm md:text-base text-gray-600 hover:text-black font-medium transition-all duration-300 relative cursor-pointer">
+                {item}
+                {/* Underline Effect */}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 hover:w-full"></span>
+              </span>
+            </Link>
+          ))}
         </nav>
-        <div className="hidden md:flex md:ml-5 items-center">
+
+        {/* Call-to-Action Button */}
+        <div>
           <a
             href="https://eu.frms.link/g1phmty/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-white text-black border-0 py-2 px-4 focus:outline-none hover:bg-gray-200 rounded text-base"
-          >
-            Join us 
+            className="bg-black text-white px-4 py-2 text-sm md:text-base font-medium hover:bg-gray-800 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-lg rounded-lg">
+            Join Us
           </a>
         </div>
+
+        {/* Mobile Menu Icon */}
+        <div
+          className="md:hidden flex items-center cursor-pointer"
+          onClick={toggleMenu}>
+          <span className="block w-6 h-0.5 bg-black mb-1"></span>
+          <span className="block w-6 h-0.5 bg-black mb-1"></span>
+          <span className="block w-6 h-0.5 bg-black"></span>
+        </div>
       </div>
-      <div className="w-full border-b-2 border-gray-800"></div>
-      {isMenuOpen && createPortal(
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex justify-center items-center">
-          <div className="bg-white p-8 rounded-lg text-black relative" style={{ width: "40%", maxWidth: "500px" }}>
-            <button
-              className="absolute top-0 right-0 mt-4 mr-4 text-gray-900"
-              onClick={toggleMenu}
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-6 h-6"
-                viewBox="0 0 24 24"
-              >
-                <path d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-            <nav className="flex flex-col items-center">
-              <Link className="mb-4 hover:text-purple-500" href="/" passHref>
-                Home
-              </Link>
-              <Link className="mb-4 hover:text-purple-500" href="/About" passHref>
-                About us
-              </Link>
-              <Link className="mb-4 hover:text-purple-500" href="/Initiatives" passHref>
-                Initiatives
-              </Link>
-              <Link className="mb-4 hover:text-purple-500" href="/Contact" passHref>
-                Contact us
-              </Link>
-              <a
-                href="https://eu.frms.link/g1phmty/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-gray-900 text-white border-0 py-2 px-4 focus:outline-none hover:bg-gray-700 rounded text-base"
-              >
-                Join us
-              </a>
-            </nav>
-          </div>
-        </div>,
-        document.body
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg">
+          {["Home", "About", "Initiatives", "Contact"].map((item) => (
+            <Link key={item} href={item === "Home" ? "/" : `/${item}`} passHref>
+              <div
+                className="py-3 px-6 text-gray-600 hover:bg-gray-100 hover:text-black transition duration-300 cursor-pointer"
+                onClick={onLinkClick}>
+                {item}
+              </div>
+            </Link>
+          ))}
+        </div>
       )}
     </header>
   );

@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,21 +5,10 @@ import styles from "../app/globals.css";
 import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
-  const [contentHeight, setContentHeight] = useState(0);
+
   const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
 
-  useEffect(() => {
-    const handleResize = () => {
-      const headerHeight = document.querySelector("header").offsetHeight;
-      const footerHeight = document.querySelector("footer").offsetHeight;
-      setContentHeight(`calc(100vh - ${headerHeight}px - ${footerHeight}px)`);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -59,35 +47,36 @@ const Contact = () => {
   return (
     <>
       <title>WHSF - Contact Us</title>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-gray-50">
         <Header />
         <section
-          className="text-gray-400 bg-gray-900 body-font relative flex-grow"
-          style={{ minHeight: contentHeight }}>
-          <div className="container px-5 py-24 mx-auto">
+          className="text-gray-700 bg-white body-font relative flex-grow"
+         >
+          <div className="container px-6 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
+              <h1 className="sm:text-3xl text-2xl font-semibold title-font mb-4 text-gray-900">
                 Contact Us
               </h1>
-              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-                Contact the official authorities.
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-600">
+                Reach out to the official authorities for inquiries or feedback.
               </p>
             </div>
-            <div className="lg:w-1/2 md:w-2/3 mx-auto">
+            <div className="lg:w-1/2 md:w-2/3 mx-auto bg-gray-100 p-8 rounded-xl shadow-lg">
               <form onSubmit={handleSubmit}>
                 <div className="flex flex-wrap -m-2">
-                  <div className="p-2 w-1/2">
+                  {/* Name Input */}
+                  <div className="p-2 w-full md:w-1/2">
                     <div className="relative">
                       <label
                         htmlFor="name"
-                        className="leading-7 text-sm text-gray-400">
+                        className="leading-7 text-sm text-gray-600">
                         Name
                       </label>
                       <input
                         type="text"
                         id="name"
                         name="name"
-                        className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-purple-500 focus:bg-gray-900 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full bg-white rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-base outline-none text-gray-800 py-2 px-3 transition duration-200"
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -99,18 +88,20 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  <div className="p-2 w-1/2">
+
+                  {/* Email Input */}
+                  <div className="p-2 w-full md:w-1/2">
                     <div className="relative">
                       <label
                         htmlFor="email"
-                        className="leading-7 text-sm text-gray-400">
+                        className="leading-7 text-sm text-gray-600">
                         Email
                       </label>
                       <input
                         type="email"
                         id="email"
                         name="email"
-                        className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-purple-500 focus:bg-gray-900 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full bg-white rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-base outline-none text-gray-800 py-2 px-3 transition duration-200"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -122,18 +113,20 @@ const Contact = () => {
                       />
                     </div>
                   </div>
+
+                  {/* Subject Input */}
                   <div className="p-2 w-full">
                     <div className="relative">
                       <label
                         htmlFor="subject"
-                        className="leading-7 text-sm text-gray-400">
+                        className="leading-7 text-sm text-gray-600">
                         Subject
                       </label>
                       <input
                         type="text"
                         id="subject"
                         name="subject"
-                        className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-purple-500 focus:bg-gray-900 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        className="w-full bg-white rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-base outline-none text-gray-800 py-2 px-3 transition duration-200"
                         value={formData.subject}
                         onChange={handleChange}
                         required
@@ -145,17 +138,19 @@ const Contact = () => {
                       />
                     </div>
                   </div>
+
+                  {/* Message Input */}
                   <div className="p-2 w-full">
                     <div className="relative">
                       <label
                         htmlFor="message"
-                        className="leading-7 text-sm text-gray-400">
+                        className="leading-7 text-sm text-gray-600">
                         Message
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-purple-500 focus:bg-gray-900 focus:ring-2 focus:ring-purple-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                        className="w-full bg-white rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-base outline-none text-gray-800 py-2 px-3 resize-none h-32 transition duration-200"
                         value={formData.message}
                         onChange={handleChange}
                         required></textarea>
@@ -166,10 +161,12 @@ const Contact = () => {
                       />
                     </div>
                   </div>
+
+                  {/* Submit Button */}
                   <div className="p-2 w-full">
                     <button
                       type="submit"
-                      className="flex mx-auto text-white bg-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-purple-600 rounded text-lg"
+                      className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded-lg text-lg transition-all"
                       disabled={state.submitting}>
                       Send Message
                     </button>
@@ -177,7 +174,7 @@ const Contact = () => {
                 </div>
               </form>
               {showSuccess && (
-                <div className="fixed bottom-4 right-4 bg-purple-600 text-white py-2 px-4 rounded shadow-lg">
+                <div className="fixed bottom-4 right-4 bg-green-500 text-white py-2 px-4 rounded shadow-lg">
                   Your message has been delivered successfully!
                 </div>
               )}
