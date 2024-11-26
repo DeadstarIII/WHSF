@@ -5,10 +5,7 @@ import styles from "../app/globals.css";
 import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
-
   const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
-
-
 
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +30,7 @@ const Contact = () => {
       setShowSuccess(true);
       setTimeout(() => {
         setShowSuccess(false);
-      }, 3000); 
+      }, 3000);
 
       setFormData({
         name: "",
@@ -49,9 +46,7 @@ const Contact = () => {
       <title>WHSF - Contact Us</title>
       <div className="flex flex-col min-h-screen bg-gray-50">
         <Header />
-        <section
-          className="text-gray-700 bg-white body-font relative flex-grow"
-         >
+        <section className="text-gray-700 bg-white body-font relative flex-grow">
           <div className="container px-6 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
               <h1 className="sm:text-3xl text-2xl font-semibold title-font mb-4 text-gray-900">
@@ -166,9 +161,9 @@ const Contact = () => {
                   <div className="p-2 w-full">
                     <button
                       type="submit"
-                      className="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded-lg text-lg transition-all"
-                      disabled={state.submitting}>
-                      Send Message
+                      className="flex mx-auto text-white border-0 py-3 px-8 focus:outline-none bg-blue-600 hover:bg-blue-500 rounded-full text-xl transition-all"
+                     disabled={state.submitting}>
+                      Send
                     </button>
                   </div>
                 </div>
