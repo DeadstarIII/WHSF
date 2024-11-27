@@ -64,7 +64,7 @@ const Header = ({ onLinkClick }) => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg">
-          {["Home", "About", "Initiatives", "Contact"].map((item) => (
+          {["Home", "About", "Initiatives", "Contact", "Members"].map((item) => (
             <Link key={item} href={item === "Home" ? "/" : `/${item}`} passHref>
               <div
                 className="py-3 px-6 text-gray-600 hover:bg-gray-100 hover:text-black transition duration-300 cursor-pointer"
