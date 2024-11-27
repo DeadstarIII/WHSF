@@ -8,7 +8,7 @@ const Members = () => {
     { name: "Joshua Hmar", role: "President", image: "../assets/joshua.jpg" },
     { name: "Rose Ruongneisong", role: "General Secretary", image: "../assets/rose.jpg" },
     {
-      name: "Alex Phukon",
+      name: "Alex Phuke",
       role: "Vice President",
       image: "../assets/deadstar.png",
     },
