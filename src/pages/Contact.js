@@ -47,7 +47,7 @@ const Contact = () => {
       <div className="flex flex-col min-h-screen bg-gray-50">
         <Header />
         <section className="text-gray-700 bg-white body-font relative flex-grow">
-          <div className="container px-6 py-24 mx-auto">
+          <div className="container px-6 py-12 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
               <h1 className="sm:text-3xl text-2xl font-semibold title-font mb-4 text-gray-900">
                 Contact Us

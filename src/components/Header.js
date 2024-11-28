@@ -8,9 +8,15 @@ const Header = ({ onLinkClick }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    if (onLinkClick) onLinkClick();
+  };
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-12">
+        {/* Logo */}
         <Link href="/" passHref>
           <div className="flex items-center space-x-3 cursor-pointer group">
             <img
@@ -21,7 +27,7 @@ const Header = ({ onLinkClick }) => {
           </div>
         </Link>
 
-        {/* Navigation */}
+        {/* Navigation for Desktop */}
         <nav className="hidden md:flex space-x-8">
           {["Home", "About", "Initiatives", "Contact", "Members"].map((item) => (
             <Link key={item} href={item === "Home" ? "/" : `/${item}`} passHref>
@@ -46,35 +52,43 @@ const Header = ({ onLinkClick }) => {
         </div>
 
         {/* Mobile Menu Icon */}
-        <div
-          className="md:hidden flex items-center cursor-pointer"
+        <button
+          className="md:hidden flex flex-col items-center justify-center space-y-1 focus:outline-none"
           onClick={toggleMenu}>
           <span
-            className={`block w-6 h-0.5 bg-black mb-1 transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+            className={`block w-6 h-0.5 bg-black transition-all duration-300 ${
+              isMenuOpen ? "rotate-45 translate-y-2" : "rotate-0"
+            }`}
           ></span>
           <span
-            className={`block w-6 h-0.5 bg-black mb-1 transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
+            className={`block w-6 h-0.5 bg-black transition-all duration-300 ${
+              isMenuOpen ? "opacity-0" : "opacity-100"
+            }`}
           ></span>
           <span
-            className={`block w-6 h-0.5 bg-black mb-1 transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            className={`block w-6 h-0.5 bg-black transition-all duration-300 ${
+              isMenuOpen ? "-rotate-45 -translate-y-2" : "rotate-0"
+            }`}
           ></span>
-        </div>
+        </button>
       </div>
 
       {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg">
-          {["Home", "About", "Initiatives", "Contact", "Members"].map((item) => (
-            <Link key={item} href={item === "Home" ? "/" : `/${item}`} passHref>
-              <div
-                className="py-3 px-6 text-gray-600 hover:bg-gray-100 hover:text-black transition duration-300 cursor-pointer"
-                onClick={onLinkClick}>
-                {item}
-              </div>
-            </Link>
-          ))}
-        </div>
-      )}
+      <div
+        className={`md:hidden absolute top-16 left-0 w-full bg-white shadow-lg transition-transform duration-300 ${
+          isMenuOpen ? "transform scale-y-100" : "transform scale-y-0"
+        } origin-top`}
+      >
+        {["Home", "About", "Initiatives", "Contact", "Members"].map((item) => (
+          <Link key={item} href={item === "Home" ? "/" : `/${item}`} passHref>
+            <div
+              className="py-3 px-6 text-gray-600 hover:bg-gray-100 hover:text-black transition duration-300 cursor-pointer"
+              onClick={closeMenu}>
+              {item}
+            </div>
+          </Link>
+        ))}
+      </div>
     </header>
   );
 };

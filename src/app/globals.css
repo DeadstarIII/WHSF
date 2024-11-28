@@ -4,7 +4,6 @@
 
 /* globals.css */
 
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -13,7 +12,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 a {
@@ -22,8 +20,6 @@ a {
 }
 
 html {
-  overflow: scroll;
-  overflow-x: hidden;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -46,4 +42,27 @@ footer {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.footer1 {
+  position: fixed;
+  bottom: 0;
+}
+
+/* Adjust hero section to fill screen and allow scrolling */
+.Hero {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+footer {
+  padding: 1rem 0;
+}
+
+
+html, body {
+  overflow-x: hidden;
 }

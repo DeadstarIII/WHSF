@@ -3,7 +3,6 @@
 import React from "react";
 import "./globals.css";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -11,17 +10,16 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Wesean Students Forum</title>
+        <title>WHSF</title>
         <meta
           name="description"
-          content="Website for the Wesean Students Forum"
+          content="Wesean High School Federation - A platform for high schoolers in the Wesean region to collaborate, learn, and grow."
         />
         <link rel="icon" href="/logo.png" />
       </head>
       <body className="bg-white text-gray-900">
         <Header />
         <main>{children}</main>
-        <Footer/>
       </body>
     </html>
   );

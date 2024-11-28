@@ -70,7 +70,7 @@ const Members = () => {
                     {member.name}
                   </h2>
                   {/* Member Role */}
-                  <p className="text-sm text-gray-600">{member.role}</p>
+                  <p className="text-sm text-gray-500">{member.role}</p>
                 </div>
               ))}
             </div>
