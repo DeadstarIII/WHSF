@@ -6,23 +6,33 @@ import Footer from "@/components/Footer";
 const Members = () => {
   const members = [
     { name: "Joshua Hmar", role: "President", image: "../assets/joshua.jpg" },
-    { name: "Rose Ruongneisong", role: "General Secretary", image: "../assets/rose.jpg" },
     {
       name: "Alex Phukon",
       role: "Vice President",
       image: "../assets/deadstar.png",
     },
     {
-      name: "Rituraj Dutta",
-      role: "Cultural Secretary",
-      image: "../assets/rituraj.png",
+      name: "Rose Ruongneisong",
+      role: "General Secretary",
+      image: "../assets/rose.png",
     },
+    { name: "Monseng", role: "Speaker", image: "../assets/monseng.png" },
+    {
+      name: "Emily Schrieber",
+      role: "Education Secretary",
+      image: "../assets/emily.jpg",
+    },
+
     {
       name: "Minoru Borphukon",
       role: "Public Relations Director",
       image: "../assets/minoru.jpg",
     },
-    { name: "Emily Schrieber", role: "Education Secretary", image: "../assets/emily.jpg" },
+    {
+      name: "Rituraj Dutta",
+      role: "Cultural Secretary",
+      image: "../assets/rituraj.png",
+    },
   ];
 
   return (
@@ -38,7 +48,8 @@ const Members = () => {
                 Meet Our Team
               </h1>
               <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-600">
-                A team of passionate wesean highschoolers who are committed to driving WHSF's vision forward.
+                A team of passionate Wesean highschoolers who are committed to
+                driving WHSF's vision forward.
               </p>
             </div>
 
@@ -47,16 +58,17 @@ const Members = () => {
               {members.map((member, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center bg-gray-100 p-6 rounded-xl shadow-lg transition-transform duration-300 ease-out hover:scale-105 hover:shadow-2xl"
-                >
+                  className="flex flex-col items-center text-center bg-gray-100 p-6 rounded-xl shadow-lg transition-transform duration-300 ease-out hover:scale-105 hover:shadow-2xl">
                   {/* Profile Image */}
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-32 h-32 object-cover rounded-full mb-4 transition-transform duration-1000 ease-out hover:scale-100"
+                    className="w-32 h-32 object-cover rounded-full mb-4 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out hover:scale-105"
                   />
                   {/* Member Name */}
-                  <h2 className="text-lg font-semibold text-gray-900">{member.name}</h2>
+                  <h2 className="text-lg font-semibold text-gray-900">
+                    {member.name}
+                  </h2>
                   {/* Member Role */}
                   <p className="text-sm text-gray-600">{member.role}</p>
                 </div>
