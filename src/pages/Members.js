@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const Members = () => {
   const members = [
-    { name: "Joshua Hmar", role: "President", image: "../assets/joshua.jpg" },
+    { name: "Joshua Hmar", role: "President", image: "../assets/joshua.png" },
     {
       name: "Alex Phukon",
       role: "Vice President",
@@ -26,7 +26,7 @@ const Members = () => {
     {
       name: "Minoru Borphukon",
       role: "Public Relations Director",
-      image: "../assets/minoru.jpg",
+      image: "../assets/minoru.png",
     },
     {
       name: "Rituraj Dutta",
