@@ -5,33 +5,33 @@ import Footer from "@/components/Footer";
 
 const Members = () => {
   const members = [
-    { name: "Joshua Hmar", role: "President", image: "../assets/joshua.png" },
+    { name: "Joshua Hmar", role: "President", image: "https://whsf-cdn.vercel.app/assets/joshua.png" },
     {
       name: "Alex Phukon",
       role: "Vice President",
-      image: "../assets/deadstar.png",
+      image: "https://whsf-cdn.vercel.app/assets/deadstar.png",
     },
     {
       name: "Rose Ruongneisong",
       role: "General Secretary",
-      image: "../assets/rose.png",
+      image: "https://whsf-cdn.vercel.app/assets/rose.png",
     },
-    { name: "Monseng", role: "Speaker", image: "../assets/monseng.png" },
+    { name: "Monseng", role: "Speaker", image: "https://whsf-cdn.vercel.app/assets/monseng.png" },
     {
       name: "Emily Schrieber",
       role: "Education Secretary",
-      image: "../assets/emily.jpg",
+      image: "https://whsf-cdn.vercel.app/assets/emily.jpg",
     },
 
     {
       name: "Minoru Borphukon",
       role: "Public Relations Director",
-      image: "../assets/minoru.png",
+      image: "https://whsf-cdn.vercel.app/assets/minoru.png",
     },
     {
       name: "Rituraj Dutta",
       role: "Cultural Secretary",
-      image: "../assets/rituraj.png",
+      image: "https://whsf-cdn.vercel.app/assets/rituraj.png",
     },
   ];
 
